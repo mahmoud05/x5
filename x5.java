@@ -1,9 +1,9 @@
-//// X5:  collisions.
+//// X5:  collisions.  bam59cst112day/x5
 //// (Assume ball diameter of 30.)
 
 //// GLOBALS:  pool table, 3 colored balls
 
-String title=  "ELASTIC COLLISIONS";
+String title=  "ELASTIC COLLISIONS  (x5day.java)";
 String news=   "Use 'r' key to reset.";
 String author=  "Your Name";
 
@@ -64,6 +64,11 @@ void table( float left, float top, float right, float bottom ) {
 //// ACTION:  bounce off walls, collisions
 void bounce() {
   redX += redDX;  if ( redX<left || redX>right ) redDX *= -1;
+  redY += redDY;  if ( redY<top || redY>bottom ) redDY *=  -1;
+
+  yelX += yelDX;  if ( yelX<left || yelX>right ) yelDX *= -1;
+  yelY += yelDY;  if ( yelY<top || yelY>bottom ) yelDY *=  -1;
+
 }
 void collisions() {
   float tmp;
@@ -83,6 +88,7 @@ void show() {
   fill( 255,255,255 );    ellipse( cueX,cueY, 30,30 );
 }
 void messages() {
+  fill(0);
   text( title, width/3, 20 );
   text( news, width/3, 40 );
   text( author, 10, height-10 );
