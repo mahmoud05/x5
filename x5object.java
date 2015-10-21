@@ -216,4 +216,37 @@ class Ball {
   }
 }
   
+  
+Mahmoud save
+
+float left, right, top, buttom;
+float center;
+float [] x = ( 
+ void setup() {
+  size( 600, 400 );
+  left=   50;
+  right=  width-50;
+  top=    100;
+  buttom= height-50;
+  center= left + (right-left)/2;
+}
+
+void draw() {
+  background( 255,0,239 );
+  rectMode( CORNERS );
+  table( left, top, right, buttom );
+  
+}
+
+void table( float left, float top, float right, float buttom ) {
+  fill( 250, 0, 0 );
+  strokeWeight(20);
+  stroke( 183, 94, 6 );
+  rect( left-20, top-20, right+20, buttom+20 );
+  stroke(0);
+  strokeWeight(1);
+}
+
+void draw() {
+  
 
